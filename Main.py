@@ -70,9 +70,11 @@ while Playing:
     # Check for ball bounce
     wall_sound = pygame.mixer.Sound("ping_pong_8bit_plop_1.wav")
     if ball.rect.x >= 800:
+        ball.rect.x = 798
         ball.velocity[0] = -ball.velocity[0]
         wall_sound.play()
     if ball.rect.x <= 0:
+        ball.rect.x = 2
         ball.velocity[0] = -ball.velocity[0]
         wall_sound.play()
     if ball.rect.y > 590:
@@ -93,6 +95,7 @@ while Playing:
             pygame.time.wait(5000)
             Playing = False
     if ball.rect.y < 38:
+        ball.rect.y = 39
         ball.velocity[1] = -ball.velocity[1]
         wall_sound.play()
 
